@@ -1,0 +1,36 @@
+{
+  "name": "medimind",
+  "version": "1.0.0",
+  "description": "Smart Prescription Analyzer - AI-powered prescription insights and medication reminders",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm run build:client",
+    "build:client": "cd client && npm run build"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.7",
+    "multer": "^2.0.0-rc.4",
+    "node-cron": "^3.0.3",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "prescription",
+    "ai",
+    "healthcare",
+    "medication",
+    "reminders"
+  ],
+  "author": "MediMind Team",
+  "license": "MIT"
+}

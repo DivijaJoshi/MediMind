@@ -1,0 +1,883 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Smart Prescription Analyzer</title>
+    <meta name="description" content="Understand your prescriptions with AI-powered insights and smart medication reminders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+  <body class="bg-slate-50 text-slate-800 antialiased min-h-screen font-sans" style="font-family: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'">
+    <!-- App Shell -->
+    <div class="min-h-screen flex flex-col">
+      <!-- Header -->
+      <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/80 border-b border-slate-200">
+        <div class="sm:px-6 lg:px-8 flex h-16 max-w-7xl mr-auto ml-auto pr-4 pl-4 items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-9 h-9 rounded-md bg-slate-100 ring-1 ring-slate-200">
+              <span class="text-slate-900 text-lg font-semibold tracking-tight">Rx</span>
+            </div>
+            <div class="hidden sm:flex flex-col">
+              <span class="text-slate-900 text-[18px] leading-tight tracking-tight font-semibold">Smart Prescription Analyzer</span>
+              <span class="text-xs text-slate-500">Understand, follow, and stay on track</span>
+            </div>
+          </div>
+          <div class="flex-1 hidden md:flex justify-center px-6">
+            <div class="w-full max-w-xl relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search absolute left-3 top-2.5 h-5 w-5 text-slate-400"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+              <input type="search" placeholder="Search medicines, diagnoses, advice..." class="w-full pl-10 pr-10 py-2.5 text-sm rounded-md bg-white border border-slate-200 placeholder:text-slate-400 text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 hover:border-slate-300">
+              <div class="absolute right-2 top-2.5">
+                <span class="text-[10px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-500">⌘K</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="newSessionBtn" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-md bg-white border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="wand-2" class="lucide lucide-wand-2 h-4 w-4 text-slate-500"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"></path><path d="m14 7 3 3"></path><path d="M5 6v4"></path><path d="M19 14v4"></path><path d="M10 2v2"></path><path d="M7 8H3"></path><path d="M21 16h-4"></path><path d="M11 3H9"></path></svg>
+              New session
+            </button>
+            <button class="relative flex items-center gap-3 px-2 py-1 rounded-md hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/30">
+              <span class="hidden sm:block text-right">
+                <span class="block text-xs text-slate-500">Signed in</span>
+                <span class="block text-sm font-medium text-slate-900">Patient</span>
+              </span>
+              <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&amp;w=80&amp;auto=format&amp;fit=crop" alt="User avatar" class="h-9 w-9 rounded-md ring-1 ring-slate-200 object-cover">
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <div class="flex-1">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+          <!-- Top Summary / Trust -->
+          <div class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 mb-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start gap-3">
+                <div class="h-9 w-9 rounded-md bg-emerald-50 ring-1 ring-emerald-200 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check h-5 w-5 text-emerald-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                </div>
+                <div class="">
+                  <div class="text-[20px] md:text-[22px] tracking-tight font-semibold text-slate-900">Your health, clearly explained</div>
+                  <div class="text-sm text-slate-600">We analyze prescriptions to summarize your diagnosis, medicines, and schedule reminders you can trust.</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-md bg-slate-50 border border-slate-200 text-xs text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock h-4 w-4 text-slate-500"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  On-device encryption
+                </div>
+                <div class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-md bg-slate-50 border border-slate-200 text-xs text-slate-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles h-4 w-4 text-slate-500"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+                  AI-assisted, pharmacist-reviewed
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-12 gap-6">
+            <!-- Left: Upload + Pipeline -->
+            <section class="lg:col-span-4 flex flex-col gap-6">
+              <!-- Upload Card -->
+              <div class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
+                <div class="flex items-center justify-between mb-3">
+                  <h2 class="text-[18px] tracking-tight font-semibold text-slate-900">Upload prescription</h2>
+                  <span id="uploadStatus" class="text-xs text-slate-500">JPG, PNG, PDF</span>
+                </div>
+                <div id="dropzone" class="relative rounded-md border border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100/50 transition-colors">
+                  <input id="fileInput" type="file" accept="image/*,.pdf" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                  <div class="flex flex-col items-center justify-center text-center p-6 pointer-events-none">
+                    <div class="h-12 w-12 rounded-md bg-white ring-1 ring-slate-200 flex items-center justify-center mb-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="upload-cloud" class="lucide lucide-upload-cloud h-6 w-6 text-slate-500"><path d="M12 13v8"></path><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path><path d="m8 17 4-4 4 4"></path></svg>
+                    </div>
+                    <div class="text-slate-700 text-sm">
+                      Drag &amp; drop your prescription here
+                      <span class="text-slate-500">or</span>
+                      <span class="text-indigo-600">browse</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-1">Make sure your image is clear and includes doctor notes.</div>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" class="lucide lucide-info h-4 w-4 text-slate-500"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                    Securely processed. You control your data.
+                  </div>
+                  <div class="flex gap-2">
+                    <button id="sampleBtn" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="file-text" class="lucide lucide-file-text h-4 w-4 text-slate-500"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+                      Sample
+                    </button>
+                    <button id="analyzeBtn" disabled="" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-indigo-600 border border-indigo-600 text-sm text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text" class="lucide lucide-scan-text h-4 w-4"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><path d="M7 8h8"></path><path d="M7 12h10"></path><path d="M7 16h6"></path></svg>
+                      Analyze
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Preview -->
+                <div id="previewWrap" class="mt-4 hidden">
+                  <div class="relative rounded-md overflow-hidden border border-slate-200">
+                    <img id="previewImg" src="" alt="Prescription preview" class="w-full h-40 object-cover">
+                    <div class="absolute top-2 right-2 flex gap-2">
+                      <button id="clearBtn" class="px-2.5 py-1.5 text-xs rounded-md bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300">Clear</button>
+                      <a id="openFullBtn" href="#" target="_blank" class="px-2.5 py-1.5 text-xs rounded-md bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300">Open</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pipeline -->
+              <div class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 shadow-sm">
+                <h3 class="text-[18px] tracking-tight font-semibold text-slate-900 mb-4">Analysis pipeline</h3>
+                <ol class="space-y-3">
+                  <li class="flex items-start gap-3">
+                    <div class="mt-0.5 h-6 w-6 rounded-md bg-slate-50 ring-1 ring-slate-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="scan-text" class="lucide lucide-scan-text h-4 w-4 text-slate-600"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path><path d="M17 3h2a2 2 0 0 1 2 2v2"></path><path d="M21 17v2a2 2 0 0 1-2 2h-2"></path><path d="M7 21H5a2 2 0 0 1-2-2v-2"></path><path d="M7 8h8"></path><path d="M7 12h10"></path><path d="M7 16h6"></path></svg>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-800">Extract text &amp; structure</span>
+                        <span id="step1Status" class="text-xs text-slate-500">Idle</span>
+                      </div>
+                      <div class="text-xs text-slate-600 mt-0.5">OCR and key fields (doctor, patient, diagnosis, meds).</div>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div class="mt-0.5 h-6 w-6 rounded-md bg-slate-50 ring-1 ring-slate-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit" class="lucide lucide-brain-circuit h-4 w-4 text-slate-600"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M9 13a4.5 4.5 0 0 0 3-4"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M12 13h4"></path><path d="M12 18h6a2 2 0 0 1 2 2v1"></path><path d="M12 8h8"></path><path d="M16 8V5a2 2 0 0 1 2-2"></path><circle cx="16" cy="13" r=".5"></circle><circle cx="18" cy="3" r=".5"></circle><circle cx="20" cy="21" r=".5"></circle><circle cx="20" cy="8" r=".5"></circle></svg>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-800">Summarize &amp; explain</span>
+                        <span id="step2Status" class="text-xs text-slate-500">Idle</span>
+                      </div>
+                      <div class="text-xs text-slate-600 mt-0.5">Diagnosis overview and medicine purposes.</div>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <div class="mt-0.5 h-6 w-6 rounded-md bg-slate-50 ring-1 ring-slate-200 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" class="lucide lucide-bell h-4 w-4 text-slate-600"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-slate-800">Build reminders</span>
+                        <span id="step3Status" class="text-xs text-slate-500">Idle</span>
+                      </div>
+                      <div class="text-xs text-slate-600 mt-0.5">Schedule times and adherence tracker.</div>
+                    </div>
+                  </li>
+                </ol>
+                <div id="pipelineProgress" class="mt-4 hidden">
+                  <div class="w-full h-2 rounded bg-slate-100 overflow-hidden">
+                    <div id="progressBar" class="h-2 bg-indigo-600 w-0 transition-all"></div>
+                  </div>
+                  <div class="flex items-center justify-between mt-2 text-xs text-slate-500">
+                    <span id="progressLabel">Starting…</span>
+                    <span id="progressPct">0%</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Safety Note -->
+              <div class="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+                <div class="flex items-start gap-3">
+                  <div class="h-8 w-8 rounded-md bg-amber-50 ring-1 ring-amber-200 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="alert-triangle" class="lucide lucide-alert-triangle h-4 w-4 text-amber-600"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                  </div>
+                  <div class="text-sm text-slate-700">
+                    This tool provides educational insights and reminders. Always confirm dosing and interactions with your doctor or pharmacist.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Center: Insights -->
+            <section class="lg:col-span-5 flex flex-col gap-6">
+              <!-- Loading skeleton -->
+              <div id="skeletonInsights" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="h-5 w-48 bg-slate-100 rounded animate-pulse"></div>
+                  <div class="h-5 w-16 bg-slate-100 rounded animate-pulse"></div>
+                </div>
+                <div class="space-y-3">
+                  <div class="h-4 w-full bg-slate-100 rounded animate-pulse"></div>
+                  <div class="h-4 w-5/6 bg-slate-100 rounded animate-pulse"></div>
+                  <div class="h-4 w-4/6 bg-slate-100 rounded animate-pulse"></div>
+                </div>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="h-24 bg-slate-100 rounded animate-pulse"></div>
+                  <div class="h-24 bg-slate-100 rounded animate-pulse"></div>
+                </div>
+              </div>
+
+              <!-- Doctor Said -->
+              <div id="doctorSaidCard" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="stethoscope" class="lucide lucide-stethoscope h-5 w-5 text-slate-600"><path d="M11 2v2"></path><path d="M5 2v2"></path><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"></path><path d="M8 15a6 6 0 0 0 12 0v-3"></path><circle cx="20" cy="10" r="2"></circle></svg>
+                    <h3 class="text-[18px] tracking-tight font-semibold text-slate-900">What your doctor said</h3>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button id="copySummaryBtn" class="px-2.5 py-1.5 text-xs rounded-md bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300">Copy</button>
+                    <button id="downloadBtn" class="px-2.5 py-1.5 text-xs rounded-md bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300">Download</button>
+                  </div>
+                </div>
+                <p id="doctorSummary" class="text-sm text-slate-700 leading-6"></p>
+                <div id="keyFindings" class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+              </div>
+
+              <!-- Medicines -->
+              <div id="medListCard" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="pill" class="lucide lucide-pill h-5 w-5 text-slate-600"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
+                    <h3 class="text-[18px] tracking-tight font-semibold text-slate-900">Your medicines</h3>
+                  </div>
+                  <div class="text-xs text-slate-500" id="courseDuration"></div>
+                </div>
+                <div id="medList" class="space-y-3"></div>
+              </div>
+
+              <!-- Interactions & Notes -->
+              <div id="adviceCard" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="info" class="lucide lucide-info h-5 w-5 text-slate-600"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                  <h3 class="text-[18px] tracking-tight font-semibold text-slate-900">Important notes</h3>
+                </div>
+                <ul id="adviceList" class="space-y-2 text-sm text-slate-700"></ul>
+              </div>
+            </section>
+
+            <!-- Right: Reminders -->
+            <aside class="lg:col-span-3 flex flex-col gap-6">
+              <div id="reminderCard" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="clock" class="lucide lucide-clock h-5 w-5 text-slate-600"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                    <h3 class="text-[18px] tracking-tight font-semibold text-slate-900">Today’s reminders</h3>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button id="calendarBtn" class="px-2.5 py-1.5 text-xs rounded-md bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300">Add to Calendar</button>
+                  </div>
+                </div>
+                <div id="todaySchedule" class="mt-3 space-y-3"></div>
+                <div class="mt-4 p-3 rounded-md bg-slate-50 border border-slate-200">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="bell" class="lucide lucide-bell h-4 w-4 text-slate-600"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>
+                      <span class="text-sm text-slate-700">Local notifications</span>
+                    </div>
+                    <!-- custom toggle -->
+                    <button id="notifToggle" role="switch" aria-checked="false" class="w-11 h-6 rounded-full bg-slate-200 border border-slate-200 relative transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/30">
+                      <span class="absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-all"></span>
+                    </button>
+                  </div>
+                  <div class="text-xs text-slate-500 mt-2">Enable device reminders for scheduled doses.</div>
+                </div>
+              </div>
+
+              <div id="adherenceCard" class="rounded-lg border border-slate-200 bg-white p-4 sm:p-5 hidden shadow-sm">
+                <div class="flex items-center gap-2 mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" class="lucide lucide-check-circle-2 h-5 w-5 text-slate-600"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                  <h3 class="text-[18px] tracking-tight font-semibold text-slate-900">Adherence tracker</h3>
+                </div>
+                <div class="grid grid-cols-7 gap-1.5">
+                  <div class="text-xs text-center text-slate-500">Mon</div>
+                  <div class="text-xs text-center text-slate-500">Tue</div>
+                  <div class="text-xs text-center text-slate-500">Wed</div>
+                  <div class="text-xs text-center text-slate-500">Thu</div>
+                  <div class="text-xs text-center text-slate-500">Fri</div>
+                  <div class="text-xs text-center text-slate-500">Sat</div>
+                  <div class="text-xs text-center text-slate-500">Sun</div>
+                </div>
+                <div id="adherenceDots" class="mt-2 grid grid-cols-7 gap-1.5"></div>
+                <div class="mt-3 text-xs text-slate-500">Tip: Mark each dose as taken to keep track of your progress.</div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Footer -->
+          <footer class="mt-8 pt-6 border-t border-slate-200">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+              <div>Not a medical device. For information only.</div>
+              <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-slate-800">Privacy</a>
+                <a href="#" class="hover:text-slate-800">Terms</a>
+                <a href="#" class="hover:text-slate-800">Contact</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <template id="findingPill"></template>
+
+    <template id="medItem"></template>
+
+    <template id="timeChip"></template>
+
+    <template id="scheduleItem"></template>
+
+    <!-- App Script -->
+    <script>
+      // Icon setup
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          lucide.createIcons({ attrs: { 'stroke-width': 1.5, class: 'lucide text-slate-500' } });
+        }
+      });
+
+      // Elements
+      const fileInput = document.getElementById('fileInput');
+      const sampleBtn = document.getElementById('sampleBtn');
+      const analyzeBtn = document.getElementById('analyzeBtn');
+      const previewWrap = document.getElementById('previewWrap');
+      const previewImg = document.getElementById('previewImg');
+      const openFullBtn = document.getElementById('openFullBtn');
+      const clearBtn = document.getElementById('clearBtn');
+
+      const step1 = document.getElementById('step1Status');
+      const step2 = document.getElementById('step2Status');
+      const step3 = document.getElementById('step3Status');
+      const pipelineProgress = document.getElementById('pipelineProgress');
+      const progressBar = document.getElementById('progressBar');
+      const progressLabel = document.getElementById('progressLabel');
+      const progressPct = document.getElementById('progressPct');
+
+      const skeletonInsights = document.getElementById('skeletonInsights');
+      const doctorSaidCard = document.getElementById('doctorSaidCard');
+      const doctorSummary = document.getElementById('doctorSummary');
+      const keyFindings = document.getElementById('keyFindings');
+      const medListCard = document.getElementById('medListCard');
+      const medList = document.getElementById('medList');
+      const courseDuration = document.getElementById('courseDuration');
+      const adviceCard = document.getElementById('adviceCard');
+      const adviceList = document.getElementById('adviceList');
+      const reminderCard = document.getElementById('reminderCard');
+      const todaySchedule = document.getElementById('todaySchedule');
+      const adherenceCard = document.getElementById('adherenceCard');
+      const adherenceDots = document.getElementById('adherenceDots');
+      const notifToggle = document.getElementById('notifToggle');
+
+      // Sample data to demonstrate UI after "analysis"
+      const sampleData = {
+        image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop',
+        summary:
+          'You have a mild upper respiratory tract infection with associated inflammation. Rest, hydration, and the prescribed medications will help reduce symptoms and prevent complications.',
+        findings: [
+          'Main issue: Upper respiratory tract infection',
+          'Symptoms: Sore throat, low-grade fever, cough',
+          'Advice: Rest, warm fluids, follow full course'
+        ],
+        meds: [
+          {
+            name: 'Amoxicillin',
+            dose: '500 mg',
+            freq: '2× daily',
+            duration: '5 days',
+            times: ['08:00', '20:00'],
+            purpose: 'Antibiotic to treat the infection',
+            note: 'Take after food. Complete the course even if you feel better.'
+          },
+          {
+            name: 'Paracetamol',
+            dose: '650 mg',
+            freq: 'Every 8 hours as needed',
+            duration: '3 days',
+            times: ['08:00', '16:00', '24:00'],
+            purpose: 'Reduces fever and relieves pain',
+            note: 'Do not exceed 3 g/day. Avoid alcohol.'
+          },
+          {
+            name: 'Cetirizine',
+            dose: '10 mg',
+            freq: 'Once daily',
+            duration: '5 days',
+            times: ['22:00'],
+            purpose: 'Relieves allergy-related symptoms',
+            note: 'May cause drowsiness; best taken at night.'
+          }
+        ],
+        advice: [
+          'Monitor temperature twice daily and hydrate well.',
+          'Avoid combining multiple cold medications without guidance.',
+          'Seek care if symptoms worsen or persist beyond 72 hours.'
+        ]
+      };
+
+      // Helpers
+      function resetUI() {
+        step1.textContent = 'Idle';
+        step2.textContent = 'Idle';
+        step3.textContent = 'Idle';
+        pipelineProgress.classList.add('hidden');
+        progressBar.style.width = '0%';
+        progressPct.textContent = '0%';
+        progressLabel.textContent = 'Starting…';
+
+        skeletonInsights.classList.add('hidden');
+        doctorSaidCard.classList.add('hidden');
+        medListCard.classList.add('hidden');
+        adviceCard.classList.add('hidden');
+        reminderCard.classList.add('hidden');
+        adherenceCard.classList.add('hidden');
+
+        keyFindings.innerHTML = '';
+        medList.innerHTML = '';
+        todaySchedule.innerHTML = '';
+        adviceList.innerHTML = '';
+        adherenceDots.innerHTML = '';
+      }
+
+      function showPreview(src) {
+        previewImg.src = src;
+        openFullBtn.href = src;
+        previewWrap.classList.remove('hidden');
+        analyzeBtn.disabled = false;
+      }
+
+      function timeLabelToHuman(t) {
+        const [h, m] = t.split(':').map(Number);
+        const ampm = h >= 12 ? 'PM' : 'AM';
+        const hr = ((h + 11) % 12) + 1;
+        return `${hr}:${m.toString().padStart(2, '0')} ${ampm}`;
+      }
+
+      function renderInsights(data) {
+        // Doctor summary
+        doctorSummary.textContent = data.summary;
+        keyFindings.innerHTML = '';
+        data.findings.forEach((f) => {
+          const tpl = document.getElementById('findingPill').content.cloneNode(true);
+          // expects a span inside template in original structure
+          if (tpl.querySelector) {
+            const span = tpl.querySelector('span') || document.createElement('span');
+            span.className = 'inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200';
+            span.textContent = f;
+            tpl.appendChild ? tpl.appendChild(span) : null;
+            keyFindings.appendChild(tpl);
+          }
+        });
+        doctorSaidCard.classList.remove('hidden');
+
+        // Medicines
+        medList.innerHTML = '';
+        let maxDuration = 0;
+        data.meds.forEach((m) => {
+          const d = parseInt((m.duration || '0').replace(/\D/g, '')) || 0;
+          maxDuration = Math.max(maxDuration, d);
+
+          const item = document.getElementById('medItem').content.cloneNode(true);
+          // build minimal structure if empty template
+          const root = document.createElement('div');
+          root.className = 'p-3 rounded-md border border-slate-200 bg-slate-50';
+          const title = document.createElement('div');
+          title.className = 'text-sm font-medium text-slate-900';
+          title.textContent = m.name;
+          const subtitle = document.createElement('div');
+          subtitle.className = 'text-xs text-slate-500';
+          subtitle.textContent = `${m.dose} • ${m.freq} • ${m.duration}`;
+          const desc = document.createElement('div');
+          desc.className = 'text-sm text-slate-700 mt-1';
+          desc.textContent = `${m.purpose}. ${m.note}`;
+          const chipWrap = document.createElement('div');
+          chipWrap.className = 'flex flex-wrap items-center gap-2 mt-2';
+          (m.times || []).forEach((t) => {
+            const chip = document.getElementById('timeChip').content.cloneNode(true);
+            const span = document.createElement('span');
+            span.className = 'inline-flex items-center text-xs px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-700';
+            span.textContent = timeLabelToHuman(t);
+            chip.appendChild ? chip.appendChild(span) : null;
+            chipWrap.appendChild(span);
+          });
+          root.appendChild(title);
+          root.appendChild(subtitle);
+          root.appendChild(desc);
+          root.appendChild(chipWrap);
+          item.appendChild ? item.appendChild(root) : null;
+          medList.appendChild(item.childNodes.length ? item : root);
+        });
+        courseDuration.textContent = maxDuration ? `Course approx. ${maxDuration} day${maxDuration > 1 ? 's' : ''}` : '';
+        medListCard.classList.remove('hidden');
+
+        // Advice
+        adviceList.innerHTML = '';
+        data.advice.forEach((tip) => {
+          const li = document.createElement('li');
+          li.className = 'flex items-start gap-2';
+          li.innerHTML = `<i data-lucide="dot" class="h-5 w-5 text-slate-400"></i><span>${tip}</span>`;
+          adviceList.appendChild(li);
+        });
+        adviceCard.classList.remove('hidden');
+        if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.5, class: 'lucide text-slate-500' } });
+
+        // Reminders
+        todaySchedule.innerHTML = '';
+        const schedule = [];
+        data.meds.forEach((m) => {
+          (m.times || []).forEach((t) => {
+            schedule.push({
+              time: t,
+              label: `${m.name} • ${m.dose}`,
+              detail: `${m.freq.replace(/×/g, 'x')} • ${m.duration}`
+            });
+          });
+        });
+        schedule.sort((a, b) => (a.time > b.time ? 1 : -1));
+
+        schedule.forEach((s) => {
+          const item = document.getElementById('scheduleItem').content.cloneNode(true);
+          const container = document.createElement('div');
+          container.className = 'p-3 rounded-md border border-slate-200 bg-white flex items-center justify-between';
+          const textWrap = document.createElement('div');
+          const title = document.createElement('div');
+          title.className = 'text-sm text-slate-900';
+          title.textContent = `${timeLabelToHuman(s.time)} — ${s.label}`;
+          const sub = document.createElement('div');
+          sub.className = 'text-xs text-slate-500';
+          sub.textContent = s.detail;
+          textWrap.appendChild(title);
+          textWrap.appendChild(sub);
+          const toggle = document.createElement('button');
+          toggle.className = 'taken-toggle w-11 h-6 rounded-full bg-slate-200 border border-slate-200 relative transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/30';
+          toggle.setAttribute('aria-checked', 'false');
+          const knob = document.createElement('span');
+          knob.className = 'absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-all';
+          toggle.appendChild(knob);
+
+          toggle.addEventListener('click', () => {
+            const checked = toggle.getAttribute('aria-checked') === 'true';
+            toggle.setAttribute('aria-checked', String(!checked));
+            if (!checked) {
+              toggle.classList.add('bg-emerald-500/20', 'border-emerald-400/40');
+              knob.style.transform = 'translateX(1rem)';
+            } else {
+              toggle.classList.remove('bg-emerald-500/20', 'border-emerald-400/40');
+              knob.style.transform = 'translateX(0)';
+            }
+          });
+
+          container.appendChild(textWrap);
+          container.appendChild(toggle);
+          item.appendChild ? item.appendChild(container) : null;
+          todaySchedule.appendChild(item.childNodes.length ? item : container);
+        });
+        reminderCard.classList.remove('hidden');
+
+        // Adherence
+        adherenceDots.innerHTML = '';
+        const days = 7;
+        for (let i = 0; i < days; i++) {
+          const btn = document.createElement('button');
+          btn.className =
+            'w-full aspect-square rounded-md bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30';
+          btn.setAttribute('aria-pressed', 'false');
+          btn.addEventListener('click', () => {
+            const pressed = btn.getAttribute('aria-pressed') === 'true';
+            btn.setAttribute('aria-pressed', String(!pressed));
+            if (!pressed) {
+              btn.classList.add('bg-emerald-500/20', 'border-emerald-400/40');
+            } else {
+              btn.classList.remove('bg-emerald-500/20', 'border-emerald-400/40');
+            }
+          });
+          adherenceDots.appendChild(btn);
+        }
+        adherenceCard.classList.remove('hidden');
+      }
+
+      function simulatePipeline(data) {
+        resetUI();
+        skeletonInsights.classList.remove('hidden');
+        pipelineProgress.classList.remove('hidden');
+
+        analyzeBtn.disabled = true;
+
+        const steps = [
+          { el: step1, label: 'Reading prescription…' },
+          { el: step2, label: 'Summarizing & explaining…' },
+          { el: step3, label: 'Scheduling reminders…' }
+        ];
+
+        let progress = 0;
+        let currentStep = 0;
+
+        steps.forEach((s) => (s.el.textContent = 'Queued'));
+
+        const interval = setInterval(() => {
+          progress = Math.min(progress + Math.floor(Math.random() * 10) + 6, 100);
+          progressBar.style.width = progress + '%';
+          progressPct.textContent = progress + '%';
+
+          if (progress < 35) currentStep = 0;
+          else if (progress < 70) currentStep = 1;
+          else currentStep = 2;
+
+          steps.forEach((s, i) => {
+            if (i < currentStep) s.el.textContent = 'Done';
+            else if (i === currentStep) s.el.textContent = s.label;
+            else s.el.textContent = 'Queued';
+          });
+
+          progressLabel.textContent = steps[currentStep].label;
+
+          if (progress >= 100) {
+            clearInterval(interval);
+            skeletonInsights.classList.add('hidden');
+            steps.forEach((s) => (s.el.textContent = 'Done'));
+            progressLabel.textContent = 'Completed';
+            renderInsights(data);
+            if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.5, class: 'lucide text-slate-500' } });
+          }
+        }, 250);
+      }
+
+      // Event handlers
+      fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          showPreview(ev.target.result);
+          resetUI();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      sampleBtn.addEventListener('click', () => {
+        showPreview(sampleData.image);
+        resetUI();
+        document.getElementById('uploadStatus').textContent = 'Sample image loaded';
+      });
+
+      analyzeBtn.addEventListener('click', () => {
+        simulatePipeline(sampleData);
+      });
+
+      // Clear preview
+      clearBtn.addEventListener('click', () => {
+        fileInput.value = '';
+        previewImg.src = '';
+        previewWrap.classList.add('hidden');
+        analyzeBtn.disabled = true;
+        document.getElementById('uploadStatus').textContent = 'JPG, PNG, PDF';
+        resetUI();
+      });
+
+      // Drag & drop support
+      const dropzone = document.getElementById('dropzone');
+      ['dragenter', 'dragover'].forEach((evt) => {
+ dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.add('ring-2', 'ring-indigo-300', 'bg-slate-100');
+        });
+      });
+      ;['dragleave', 'drop'].forEach((evt) => {
+        dropzone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.remove('ring-2', 'ring-indigo-300', 'bg-slate-100');
+        });
+      });
+      dropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        if (!dt || !dt.files || !dt.files.length) return;
+        const file = dt.files[0];
+        if (!file.type.match(/image|pdf/)) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          showPreview(ev.target.result);
+          resetUI();
+          document.getElementById('uploadStatus').textContent = 'File ready';
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Notifications toggle
+      function setSwitchVisual(btn, on) {
+        btn.setAttribute('aria-checked', String(on));
+        const knob = btn.querySelector('span');
+        if (on) {
+          btn.classList.remove('bg-slate-200', 'border-slate-200');
+          btn.classList.add('bg-emerald-500/20', 'border-emerald-400/40');
+          if (knob) knob.style.transform = 'translateX(1rem)';
+        } else {
+          btn.classList.add('bg-slate-200', 'border-slate-200');
+          btn.classList.remove('bg-emerald-500/20', 'border-emerald-400/40');
+          if (knob) knob.style.transform = 'translateX(0)';
+        }
+      }
+
+      let notifyEnabled = false;
+      notifToggle.addEventListener('click', async () => {
+        if (!notifyEnabled) {
+          try {
+            const perm = await Notification.requestPermission();
+            if (perm !== 'granted') {
+              alert('Please allow notifications in your browser settings to enable reminders.');
+              return;
+            }
+          } catch (e) {
+            console.warn('Notification permission error', e);
+            return;
+          }
+        }
+        notifyEnabled = !notifyEnabled;
+        setSwitchVisual(notifToggle, notifyEnabled);
+
+        // Demo ping
+        if (notifyEnabled) {
+          setTimeout(() => {
+            try {
+              new Notification('Reminders enabled', {
+                body: 'You will receive local notifications at scheduled times.',
+                icon: 'https://favicon.splitbee.io/?url=medicine.org'
+              });
+            } catch (e) {}
+          }, 400);
+        }
+      });
+
+      // Calendar export (.ics)
+      const calendarBtn = document.getElementById('calendarBtn');
+      function pad(n, w = 2) { return String(n).padStart(w, '0'); }
+      function dateToICSLocal(dt) {
+        return dt.getFullYear() +
+          pad(dt.getMonth() + 1) +
+          pad(dt.getDate()) + 'T' +
+          pad(dt.getHours()) +
+          pad(dt.getMinutes()) +
+          pad(dt.getSeconds());
+      }
+      function buildICS(data) {
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        let ics = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Smart Prescription Analyzer//EN',
+          'CALSCALE:GREGORIAN',
+          'METHOD:PUBLISH'
+        ];
+        data.meds.forEach((m) => {
+          (m.times || []).forEach((t) => {
+            let [hh, mm] = t.split(':').map(Number);
+            let eventDate = new Date(today);
+            if (hh === 24) { hh = 0; eventDate.setDate(eventDate.getDate() + 1); }
+            eventDate.setHours(hh, mm, 0, 0);
+            const uid = `${eventDate.getTime()}-${Math.random().toString(36).slice(2)}@rx.local`;
+            const title = `${m.name} • ${m.dose}`;
+            const desc = `${m.purpose}. ${m.note} • ${m.freq} • ${m.duration}`;
+            ics.push(
+              'BEGIN:VEVENT',
+              `UID:${uid}`,
+              `DTSTAMP:${dateToICSLocal(now)}`,
+              `DTSTART:${dateToICSLocal(eventDate)}`,
+              `SUMMARY:${title}`,
+              `DESCRIPTION:${desc.replace(/\n/g, ' ')}`,
+              'END:VEVENT'
+            );
+          });
+        });
+        ics.push('END:VCALENDAR');
+        return ics.join('\r\n');
+      }
+
+      calendarBtn?.addEventListener('click', () => {
+        const ics = buildICS(sampleData);
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'med-reminders.ics';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      // Copy & Download summary
+      const copySummaryBtn = document.getElementById('copySummaryBtn');
+      const downloadBtn = document.getElementById('downloadBtn');
+
+      copySummaryBtn.addEventListener('click', async () => {
+        const findings = Array.from(keyFindings.querySelectorAll('span')).map((s) => `- ${s.textContent}`);
+        const text = [
+          'What your doctor said:',
+          doctorSummary.textContent.trim(),
+          '',
+          'Key findings:',
+          ...findings
+        ].join('\n');
+        try {
+          await navigator.clipboard.writeText(text);
+          const original = copySummaryBtn.textContent;
+          copySummaryBtn.textContent = 'Copied';
+          copySummaryBtn.classList.add('bg-emerald-50', 'border-emerald-200');
+          setTimeout(() => {
+            copySummaryBtn.textContent = original;
+            copySummaryBtn.classList.remove('bg-emerald-50', 'border-emerald-200');
+          }, 1200);
+        } catch (e) {
+          alert('Copy failed. Please copy manually.');
+        }
+      });
+
+      downloadBtn.addEventListener('click', () => {
+        const medsText = Array.from(medList.children).map((node) => node.textContent.trim()).join('\n\n');
+        const adviceText = Array.from(adviceList.querySelectorAll('li')).map((li) => `• ${li.innerText.trim()}`).join('\n');
+        const text = [
+          'Smart Prescription Analyzer',
+          '',
+          'Summary:',
+          doctorSummary.textContent.trim(),
+          '',
+          'Medicines:',
+          medsText,
+          '',
+          'Important notes:',
+          adviceText
+        ].join('\n');
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'prescription-summary.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+
+      // New session
+      const newSessionBtn = document.getElementById('newSessionBtn');
+      newSessionBtn?.addEventListener('click', () => {
+        fileInput.value = '';
+        previewImg.src = '';
+        previewWrap.classList.add('hidden');
+        analyzeBtn.disabled = true;
+        document.getElementById('uploadStatus').textContent = 'JPG, PNG, PDF';
+        resetUI();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Quick search shortcut
+      document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          document.querySelector('input[type="search"]')?.focus();
+        }
+      });
+
+      // Auto-load sample preview for a friendly first run (optional)
+      // showPreview(sampleData.image);
+
+    </script>
+  
+</body></html>

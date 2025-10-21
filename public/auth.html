@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediMind - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.1) 2px, transparent 0); background-size: 50px 50px;"></div>
+    </div>
+    
+    <div class="relative min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-md w-full">
+            <!-- Logo -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-600 to-purple-600 mb-6 shadow-xl">
+                    <span class="text-white text-3xl font-bold">💊</span>
+                </div>
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">MediMind</h1>
+                <p class="text-gray-600 text-lg">Smart Prescription Analyzer</p>
+                <p class="text-gray-500 text-sm mt-2">Understand your medications with AI-powered insights</p>
+            </div>
+
+            <!-- Auth Form -->
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-white/20">
+                <!-- Toggle Buttons -->
+                <div class="flex bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-1 mb-8">
+                    <button id="loginTab" class="flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all bg-white text-blue-600 shadow-lg">
+                        Sign In
+                    </button>
+                    <button id="registerTab" class="flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all text-gray-600 hover:text-gray-900">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="loginEmail" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" id="loginPassword" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Sign In to MediMind
+                    </button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="registerForm" class="space-y-4 hidden">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text" id="registerName" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="registerEmail" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <input type="password" id="registerPassword" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Create MediMind Account
+                    </button>
+                </form>
+
+
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-8">
+                <div class="flex items-center justify-center gap-4 text-sm text-gray-500 mb-4">
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="shield-check" class="h-4 w-4 text-green-500"></i>
+                        <span>Secure</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="lock" class="h-4 w-4 text-blue-500"></i>
+                        <span>Private</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <i data-lucide="heart" class="h-4 w-4 text-red-500"></i>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400">Your health data is encrypted and never shared</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+
+        // Tab switching
+        loginTab.addEventListener('click', () => {
+            loginTab.className = 'flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all bg-white text-blue-600 shadow-lg';
+            registerTab.className = 'flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all text-gray-600 hover:text-gray-900';
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerTab.className = 'flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all bg-white text-blue-600 shadow-lg';
+            loginTab.className = 'flex-1 py-3 px-6 rounded-xl text-sm font-semibold transition-all text-gray-600 hover:text-gray-900';
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        });
+
+        // Login
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const data = await response.json();
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = '/dashboard';
+                } else {
+                    alert('Invalid credentials');
+                }
+            } catch (error) {
+                alert('Login failed');
+            }
+        });
+
+        // Register
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+                
+                const data = await response.json();
+                if (data.token) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    window.location.href = '/dashboard';
+                } else {
+                    alert('Registration failed');
+                }
+            } catch (error) {
+                alert('Registration failed');
+            }
+        });
+
+
+
+        // Don't auto-redirect - let user choose to login or continue
+        
+        // Clear any invalid storage on load
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('clear') === 'true') {
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.href = '/';
+        }
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
